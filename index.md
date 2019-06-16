@@ -15,7 +15,8 @@ Cet atelier vise à initier l’utilisateur aux bonnes pratiques de travail en s
  - Git expert en rafale
 
 ## Prérequis pour la formation
-L'installation de Git.
+L'installation de [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+> Pour *Windows* sélectionnez l'option d'installation de Git Bash.
  
 ## Auteurs et animateurs
 David Beauchemin, étudiant à la maîtrise en informatique à l'Université Laval.
