@@ -1,3 +1,7 @@
+# Personnal rules
+bonnes-pratiques-git.zip
+
+# General rules 
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -240,3 +244,5 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+
