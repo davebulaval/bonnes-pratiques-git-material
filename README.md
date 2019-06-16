@@ -1,6 +1,3 @@
-# bonnes-pratiques-git-material
-Matériel pour la formation Bonnes pratiques Git
-
 > Dépôt de la formation présenté par David Beauchemin pour [.Layer](dotlayer.org)
 
 ## Bonnes pratiques & Git
