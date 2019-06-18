@@ -343,10 +343,11 @@ scp -r deepnlp:'/mnt/cnn_dm/model_1/*.png' Result
 \begin{frame}[fragile]
 	Le plus simple pour partir un dépôt git est de créer un dépôt sur GitHub et de faire un \verb|git clone <url>|.
 	
+	Cette commande initialise 
 	\begin{itemize}[<+->]
-		\item Initialize le dépôt,
-		\item initialise les remotes,
-		\item   s'initialise avec des fichiers de base automatiquement.
+		\item le dépôt,
+		\item les remotes,
+		\item des fichiers de base dans le dépôt (\textit{.gitignore}, \textit{README.md}).
 	\end{itemize}
 \end{frame}
 
@@ -356,7 +357,7 @@ scp -r deepnlp:'/mnt/cnn_dm/model_1/*.png' Result
 
 \begin{frame}{Exercice}
 	\begin{block}{Cloner un dépôt}
-		Aller cloner le dépôt de la formation \url{https://github.com/davebulaval/bonnes-pratiques-git.git}
+		Allez cloner le dépôt de la formation \url{https://github.com/davebulaval/bonnes-pratiques-git.git}
 	\end{block}
 \end{frame}
 
@@ -418,7 +419,7 @@ scp -r deepnlp:'/mnt/cnn_dm/model_1/*.png' Result
 \end{frame}
 
 \begin{frame}[fragile]{\textit{commit} that}
-	Lorsqu'on crée un commit, on prend un \textit{snapshot} de l'état du code à un moment $t$. Un commit  contient un titre et peut aussi contenir un contenu plus exhaustif.
+	Lorsqu'on crée un commit, on prend un \textit{snapshot} de l'état du code à un moment précis. Un commit  contient un titre et peut aussi contenir un contenu plus exhaustif.
 	\bigskip
 	
 	Pour créer cela, on utilise la commande \verb|git commit|.
@@ -658,7 +659,7 @@ Un autre point qui distingue Git d'une utilisation simple de nommage est la poss
 		\verb|git commit --amend fichier| \note{Permets aussi de modifier le message.}
 		
 	\end{block}
-	Attention, l'opération de changer le message et son contenu modifie le SHA du commit. Il faut faire cette opération uniquement si les modifications sont locale. \note{On va voir des méthodes plus loin pour le faire avec remote.}
+	Attention, l'opération de changer le message et son contenu modifie le SHA du commit. Il faut faire cette opération uniquement si les modifications sont locales. \note{On va voir des méthodes plus loin pour le faire avec remote.}
 \end{frame}
 
 \begin{frame}[fragile]{La gestion des commits}
@@ -668,7 +669,7 @@ Un autre point qui distingue Git d'une utilisation simple de nommage est la poss
 \end{frame}
 
 \begin{frame}[fragile]{\textit{git add --patch}}
-	Cette commande permet de segmenter les modifications dans les fichiers. Pour en regrouper les modifications portant sur un même sujet. Les principales options disponibles durant l'application de la \textit{patch} sont :
+	Cette commande permet de segmenter les modifications dans les fichiers, pour en regrouper les modifications portant sur un même sujet. Les principales options disponibles durant l'application de la \textit{patch} sont :
 	\begin{itemize}
 		\item \verb|y| Yes, ajouter ce morceau.
 		\item \verb|n| No, ne pas ajouter ce morceau.
@@ -680,7 +681,7 @@ Un autre point qui distingue Git d'une utilisation simple de nommage est la poss
 \begin{frame}[fragile]{Exercice}
 	\begin{block}{git add --patch}
 		Déplacez-vous sur la branche patch \\
-		Effectuer des changements dans le code à de multiple endroit.\\
+		Effectuez des changements dans le code à de multiple endroit.\\
 		Faites plusieurs commits en regroupant différentes modifications.\\
 		Mettez à jour le répertoire origin.
 	\end{block}
@@ -776,7 +777,7 @@ Un autre point qui distingue Git d'une utilisation simple de nommage est la poss
 
 \begin{frame}[fragile]{La gestion \textit{pro} des commits}
 	\begin{block}{git rebase}
-		Similaire à cherry-pick mais plutôt que de prendre les commits et réapplique les modifications. Cela peut entrainer des suppressions et réécrit l'histoire des commits.
+		Similaire à cherry-pick mais plutôt que de prendre les commits on réapplique les modifications à l'histoire. Cela peut entrainer des suppressions et réécrit l'histoire des commits.
 	\end{block}
 	\href{https://fr.atlassian.com/git/tutorials/rewriting-history/git-rebase}{Tutoriel rebase par Atlassian}\newline
 	\href{https://www.atlassian.com/git/tutorials/merging-vs-rebasing}{Tutoriel merge vs rebasing par Atlassian}
@@ -784,11 +785,10 @@ Un autre point qui distingue Git d'une utilisation simple de nommage est la poss
 
 \begin{frame}{La gestion \textit{pro} des commits}
 	\begin{block}{git reset soft, mixt and hard}
-		explication reset
-		Permets de remettre la tête courante (HEAD) à un état désigné. Il y a plusieurs applications :
+		Permet de remettre la tête courante (HEAD) à un état désigné. Il y a plusieurs applications :
 		\begin{itemize}
 			\item Soft, déplace seulement les fichiers commit dans staged.
-			\item mix, les fichiers staged et commit sont unstanged et ne touche pas aux fichiers unstaged. 
+			\item mix, les fichiers staged et commit sont unstaged et ne touche pas aux fichiers unstaged. 
 			\item hard; restore tout du commit. Donc, supprime tous les changements.
 		\end{itemize}
 	\end{block}
