@@ -281,7 +281,10 @@ Host {credential_name}
 		\item \verb|scp -r {local_directory}:{remote} {path}|
 		\note{Pour envoyer un directory.}
 		\item \verb|scp -r {remote}:'{path}{pattern}' {local_path}| 
-		\note{On peut aussi utiliser des regex.}	
+		\note{On peut aussi utiliser des regex.}
+		\item \verb|scp -3 -vr {remote1}:path {username}@{ip}:./| 
+		\note{On peut aussi notre ordinateur comme pont entre deux ordinateurs pour faire un transfert.}	
+		%% Exemple et explication des composantes ?
 	\end{itemize}
 \end{frame}
 
@@ -702,7 +705,8 @@ Un autre point qui distingue Git d'une utilisation simple de nommage est la poss
 
 \begin{frame}[fragile]{La gestion des branches}
 	\begin{block}{Comment faire le ménage des branches avec un merge ?}
-		\verb|git remote prune origin [--dry-run]|
+		\verb|git branch -d nom_branche|\\
+		\verb|git push origin :nom_branche|
 		\note{Dois être fait de la branche où l'on veut merge.}
 	\end{block}
 \end{frame}
